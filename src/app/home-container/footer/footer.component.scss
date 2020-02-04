@@ -1,0 +1,34 @@
+@import "../../../assets/scss/_variables";
+@import "../../../assets/scss/_mixins";
+footer {
+    @include background-color($priper);
+    color: $white;
+    h3 {
+        @include typoStyle($play, 1.3rem, 900);
+        color: $light-priper;
+        text-transform: uppercase;
+    }
+    p {
+        @include typoStyle($lato, .8rem, 200);
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            a {
+                color: $white;
+                @include typoStyle($play, .8rem, 100);
+            }
+        }
+    }
+    input {
+        @include typoStyle($play, .9rem, 200);
+        @include border-radius(10px);
+    }
+    i {
+        &:hover {
+            color: $light-priper;
+            cursor: pointer;
+        }
+    }
+}

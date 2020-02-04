@@ -1,0 +1,43 @@
+@import "../../assets/scss/_variables";
+@import "../../assets/scss/_mixins";
+#signup {
+    @include background-color($light-priper);
+    h3 {
+        @include typoStyle($play, 2rem, 900);
+        color: $dark-blue;
+    }
+    input {
+        border: 0;
+        outline: 0;
+        border-bottom: .1rem solid $priper;
+        background: 0;
+        margin: 1rem 0;
+        @include typoStyle($lato, .8rem, 500);
+        color: $priper;
+        &::placeholder {
+            font-style: italic;
+            @include typoStyle($lato, .8rem, 200);
+            color: $priper;
+            text-transform: lowercase;
+        }
+    }
+    input[type="file"] {
+        border: 0;
+    }
+    label {
+        @include typoStyle($lato, 1rem, 900);
+        span {
+            color: $orange;
+        }
+    }
+    .btn-primary {
+        @include background-color($priper);
+        border: 0;
+        @include typoStyle($play, .8rem, 900);
+        color: $white;
+        text-transform: uppercase;
+    }
+    .alert-danger {
+        @include typoStyle($play, .6rem, 200);
+    }
+}

@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row" *ngIf="selectedProduct.name">
+		<div class="col-md-8">
+			<div class="card card-body">
+				<img src="{{ selectedProduct.imgPath }}" alt="">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card card-body">
+				<p>Product Name: {{ selectedProduct.name }}</p>
+				<p>Product Price: {{ selectedProduct.price }}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" *ngIf="!selectedProduct.name">
+        <div class="col-sm-12">
+            <div class="alert alert-danger" role="alert">
+                No Product Selected.
+            </div>
+        </div>    
+    </div>
+</div>

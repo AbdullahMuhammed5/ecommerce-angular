@@ -1,0 +1,47 @@
+@import "../../../assets/scss/_variables";
+@import "../../../assets/scss/_mixins";
+header {
+    nav {
+        background: $priper !important;
+        color: #fff;
+        ul {
+            li {
+                // padding: 10px;
+                a {
+                    @include typoStyle($play, 0.8rem, 400);
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .signin {
+        @include background-color($priper);
+        @include border-radius(10px);
+        a {
+            color: $white !important;
+        }
+    }
+
+    .login{
+        @include typoStyle($play, 0.7rem, 400);
+        .btn-outline-danger{
+            @include typoStyle($play, 0.7rem, 400);            
+        }
+    }
+
+}
+
+.cart{
+    #cart-img{
+        width: 35px;
+    }
+    span{
+        background-color: #fff;
+        padding: 4px;
+        border-radius: 50%;
+        font-size: 10px;
+        color: $priper;
+        margin-left: -30px; 
+    }
+}

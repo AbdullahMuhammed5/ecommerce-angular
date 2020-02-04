@@ -1,0 +1,32 @@
+@import "../../../assets/scss/_variables";
+@import "../../../assets/scss/_mixins";
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.card {
+    border: 0;
+    // border-radius: 50px 0 0 0;
+    box-shadow: 4px -4px 43px 0px $light-priper;
+    .card-title {
+        @include typoStyle($play, 1.2rem, 900);
+        text-transform: uppercase;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .card-text {
+        @include typoStyle($play, 3rem, 900);
+        color: $priper;
+    }
+    img {
+        margin: $auto-margin;
+        height: 180px;
+    }
+    button {
+        // @include background-color($addToCardBtn);
+        border: 0;
+        @include typoStyle($play, .8rem, 900);
+        text-transform: uppercase;
+    }
+}

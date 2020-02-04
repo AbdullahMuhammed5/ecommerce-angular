@@ -1,0 +1,70 @@
+<section id="signup" class="py-5">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <img src="../../assets/img/signup-bg.jpg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12">
+                    <h3 class="mb-4">Create New Account</h3>
+                    <form [formGroup]="signup" (ngSubmit)="onSubmit(signup)">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <input class="form-control" formControlName="firstName" placeholder="Your First Name">
+                                <div class="alert alert-danger" role="alert" *ngIf="firstName.touched && firstName.invalid">
+                                    Please Enter Your First Name
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <input class="form-control" formControlName="lastName" placeholder="Your Last Name">
+                                <div class="alert alert-danger" role="alert" *ngIf="lastName.touched && lastName.invalid">
+                                    Please Enter Your Last Name
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <input class="form-control" formControlName="email" placeholder="Your Email">
+                                <div class="alert alert-danger" role="alert" *ngIf="email.touched && email.invalid && email.value ==='' ">
+                                    E-mail Can't be empty
+                                </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="email.errors?.email">
+                                    Email Format is wrong
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <input type="password" class="form-control" formControlName="password" placeholder="Your Password">
+                                <div class="alert alert-danger" role="alert" *ngIf=" password.touched && password.value =='' ">
+                                    Password Can't be empty
+                                </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="signup.controls['password'].hasError('minlength')">
+                                    Min character are 6
+                                </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="signup.controls['password'].hasError('maxlength')">
+                                    Max character are 12
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <input class="form-control" formControlName="confirm" placeholder="Your Confirm Password" type="password" (blur)='onBlur(passwor,confirm)'>
+                                <div class="alert alert-danger" role="alert" *ngIf="confirm.invalid && confirm.touched">
+                                    You must Confirm Password
+                                </div>
+                                <div class="alert alert-danger" role="alert" *ngIf="onBlur(password,confirm) === false">
+                                    Password Is Not Matched
+                                </div>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <label for="exampleFormControlFile1">Your Profile Image <span>(optional)</span></label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+
+                                <button type="submit" class="btn btn-primary">Regiseter</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>

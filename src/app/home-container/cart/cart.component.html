@@ -1,0 +1,32 @@
+<div class="container">
+	<header>
+		<h1>Cart</h1>
+		<hr>
+	</header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12" *ngFor="let product of products">
+                <div class="card mb-2 p-1">
+                    <div class="card-body d-flex">
+						<p>{{product.name}}</p>
+						<div class="ml-auto">
+                        	<button class="btn btn-success btn-sm" 
+                        	(click)='addItem(product)'><i class="fas fa-plus"></i></button>
+                        <span class="mx-2">{{product.quantity}}</span>
+                        	<button class="btn btn-danger btn-sm" 
+                        	(click)='removeItem(product)'><i class="fas fa-minus"></i></button>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="products.length == 0">
+            <div class="col-sm-12">
+                <div class="alert alert-danger" role="alert">
+                    No Items in the cart list.
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>

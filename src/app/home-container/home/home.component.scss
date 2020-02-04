@@ -1,0 +1,62 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+#home {
+    h2 {
+        @include typoStyle($play, 3rem, 900);
+        color: $dark-blue
+    }
+    p {
+        @include typoStyle($lato, .8rem, 500);
+    }
+    button.btn.btn-primary {
+        @include background-color($priper);
+        @include typoStyle($play, 1rem, 900);
+        text-transform: uppercase;
+        border: 0;
+    }
+}
+
+#about {
+    // @include background-img($aboutBG, cover, center, no-repeat);
+    .card {
+        @include background-color(transparent);
+        border: 0;
+        box-shadow: 1px -5px 37px -25px rgba(234, 230, 255, 1);
+        &:hover {
+            @include background-color($priper);
+            color: $white;
+            cursor: pointer;
+            .card-title {
+                color: $white;
+            }
+        }
+        .card-title {
+            @include typoStyle($play, 1.5rem, 500);
+            color: $dark-blue;
+        }
+        .card-body {
+            @include typoStyle($lato, .8rem, 200);
+        }
+    }
+}
+
+.section-text {
+    h3 {
+        @include typoStyle($play, 1.5rem, 900);
+        text-transform: uppercase;
+        &::after {
+            content: "";
+            @include background-color($priper);
+            width: 5%;
+            height: .2rem;
+            display: block;
+            margin: $auto-margin;
+        }
+    }
+    p {
+        @include typoStyle($lato, .8rem, 500);
+        width: 50%;
+        margin: $auto-margin;
+    }
+}
